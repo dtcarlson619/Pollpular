@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+@model Poll
+<div class="row">
+   <div class="border border-dark p-3 m-3 col-6 d-inline">
+        <h2 class="text-primary">Create a Poll:</h2>
+        <form method="POST" asp-action="CreatePoll" asp-controller="Home">
+            <div class="form-group">
+                <label asp-for="Question">Make a Poll Question:</label>
+                <input class="form-control" type="text" asp-for="Question">
+                <span class="text-danger" asp-validation-for="Question"></span>
+            </div>
+            <input class="form-control" type="hidden" asp-for="UserId" value="@ViewBag.UserId">
+            <button class="btn btn-primary" type="submit">Start</button>
+        </form>
+    </div>
+</div>

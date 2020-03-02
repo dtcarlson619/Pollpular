@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+@model Poll
+<style>
+    html, body { 
+    background: url(images/vote.jpeg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+</style>
+<div>
+    <h2 class="text-primary">@Model.Question</h2>
+    <div class="border border-dark p-3 m-3">
+        <form>
+            <div class="form-group">
+                <input type="radio" id="" name="sample" value="">
+                <label for="male">Option A</label><br>
+                <input type="radio" id="" name="sample" value="">
+                <label for="male">Option B</label><br>
+                <input type="radio" id="" name="sample" value="">
+                <label for="male">Option C</label><br>
+                <input type="radio" id="" name="sample" value="">
+                <label for="male">Option D</label><br>
+            </div>
+        </form>
+    </div>
+</div>
+<a class="col-3 text-right" href="results/@ViewBag.PollId"><input type="button" value="Vote" class="btn btn-primary"></a>

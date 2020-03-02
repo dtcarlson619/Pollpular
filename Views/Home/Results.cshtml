@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+@model Poll
+<style>
+    html, body { 
+    background: url(images/graph.jpeg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+</style>
+<div>
+    <h2 class="text-primary">@Model.Question</h2>
+    <div class="border border-dark p-3 m-3">
+        <ul>
+            <li><h2 class="text-info">Option A -- <span class="text-danger">30% [][][]</span></h2></li>
+            <li><h2 class="text-info">Option B -- <span class="text-danger">10% []</span></h2></li>
+            <li><h2 class="text-info">Option C -- <span class="text-danger">20% [][]</span></h2></li>
+            <li><h2 class="text-info">Option D -- <span class="text-danger">40% [][][][]</span></h2></li>
+        </ul>
+    </div>
+</div>
+<a class="col-3 text-right" asp-action="Dashboard" asp-controller="Home"><input type="button" value="Back to Dashboard" class="btn btn-primary"></a>

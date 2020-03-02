@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+@model User
+
+<div class="row">
+    <h2 class="col-5">Hello, @ViewBag.LoggedUser.FirstName</h2>
+    <a class="col-3 text-right" asp-action="CreatePollPage" asp-controller="Home"><input type="button" value="Create a Poll" class="btn btn-primary"></a>
+    <a class="col-3 text-right" asp-action="Logout" asp-controller="Home"><input type="button" value="Logout" class="btn btn-primary"></a>
+</div>
+<div class="row">
+    @foreach(Poll poll in @ViewBag.Polls)
+    {
+    <div class="col-3 d-flex flex-wrap">
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">@poll.Question</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Created by: @poll.User.FirstName</h6>
+            <a href="poll/@poll.PollId" class="card-link">View</a>
+            <a href="delete/@poll.PollId" class="card-link">Delete</a>
+        </div>
+        </div>
+    </div>
+    }
+</div>
